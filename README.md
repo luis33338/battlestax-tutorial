@@ -11,6 +11,7 @@ BattleStax is a stateful JAMStack game that is wholesome fun for the entire crew
 BattleStax's folder structure is (mostly) generated from [Create React App](https://github.com/facebook/create-react-app). We then add a Netlify Functions and Github Actions.
 
 - .github - [Github Actions](https://github.com/features/actions) configuration
+- functions - [Netlify Functions](https://www.netlify.com/products/functions/) Lambda function definition
 - public - Static files
 - src - [create-react-app](https://github.com/facebook/create-react-app) source files
 - tutorial - tutorial content
@@ -59,4 +60,12 @@ Then, start the app in dev mode. Changes in the `src` or `functions` directories
 ```sh
 # start battlestax in dev mode
 npm run dev
+```
+
+### Netlify Function Testing
+
+Test your netlify functions 
+```sh
+# run the function tests
+npm run test:functions
 ```

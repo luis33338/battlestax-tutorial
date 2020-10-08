@@ -1,6 +1,7 @@
 {
   "name": "battlestax-tutorial",
   "version": "0.0.1",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -14,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:functions": "jest functions/* --coverage --setupFiles dotenv/config",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
