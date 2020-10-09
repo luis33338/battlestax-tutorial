@@ -1,10 +1,18 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import NewGame from "../../pages/lobby/NewGame";
 
 export default function App() {
   return (
     <React.Fragment>
-      <h1 style={{ color: "white" }}>BattleStax</h1>
-      <img src="/placeholder.png" alt="placeholder" style={{ width: 600 }} />
+      <Switch>
+        <Route exact path="/">
+          <NewGame />
+        </Route>
+        <Route exact path="/lobby">
+          <NewGame />
+        </Route>
+      </Switch>
     </React.Fragment>
   );
 }
