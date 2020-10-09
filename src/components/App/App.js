@@ -9,9 +9,6 @@ export default function App() {
         <Route exact path="/">
           <NewGame />
         </Route>
-        <Route exact path="/lobby">
-          <NewGame />
-        </Route>
       </Switch>
     </React.Fragment>
   );
