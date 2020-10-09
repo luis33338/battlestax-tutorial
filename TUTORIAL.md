@@ -13,10 +13,13 @@ ASTRA_DB_ID=
 ASTRA_DB_REGION=
 GAMES_COLLECTION=games
 ```
-3. Clone the `BattleStax Tutorial` repository to your local host - [Repository](https://github.com/kidrecursive/battlestax-tutorial)
+3. Fork the main `BattleStax Tutorial`: https://github.com/kidrecursive/battlestax-tutorial
+
+4. Clone _your_ `BattleStax Tutorial` repository to your local host
 ```
-git clone git@github.com:kidrecursive/battlestax-tutorial.git
+git clone git@github.com:[your_github_id]/battlestax-tutorial.git
 ```
+
 Sweet! You have what you need to set up your localhost. Let's do that next.
 
 #### A. Setup for local development:
