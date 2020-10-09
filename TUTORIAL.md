@@ -68,12 +68,14 @@ Next, let's set up your production deployment process with Netlify.
 8. When your new site is ready, you will be able to go to: `<your_url>.battlestax.app` to see your game.
 
 #### C. Setup for Production CI/CD:
-1. On your local machine, create a new branch and issue an empty commit, then push it to your fork.
+1. Add your secret variables to your github project.
+![secret keys in github](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/github_secrets.png)
+2. On your local machine, create a new branch and issue an empty commit, then push it to your fork.
 ```
 git checkout -b test_pr
 git commit -m --allow_empty "New branch to test ci/cd"
 git push origin test_pr
 ```
-2. From the Github UI, open a PR for `test_pr` into `master`. 
-3. Observe the tests passing.
-4. Merge the PR, observe the site deploying.
+3. From the Github UI, open a PR for `test_pr` into `master`. 
+4. Observe the tests passing.
+5. Merge the PR, observe the site deploying.
