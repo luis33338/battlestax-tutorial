@@ -1,14 +1,14 @@
 {
   "name": "battlestax-tutorial",
   "version": "0.0.1",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "astra-js": "kidrecursive/astra-js#master"
   },
   "scripts": {
     "dev": "netlify dev",
@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "faker": "^5.1.0",
     "netlify-cli": "^2.65.0"
   }
 }
