@@ -62,6 +62,14 @@ Then, start the app in dev mode. Changes in the `src` or `functions` directories
 npm run dev
 ```
 
+### Client Testing
+
+Test your react/redux client 
+```sh
+# run the client tests
+npm test
+```
+
 ### Netlify Function Testing
 
 Test your netlify functions 
