@@ -135,7 +135,7 @@ Next, let's set up your production deployment process with Netlify.
 2. On your local machine, create a new branch and issue an empty commit, then push it to your fork.
 ```
 git checkout -b test_pr
-git commit -m --allow_empty "New branch to test ci/cd"
+git commit --allow-empty -m "New branch to test ci/cd"
 git push origin test_pr
 ```
 3. From the Github UI, open a PR for `test_pr` into `master`.
