@@ -127,7 +127,7 @@ Next, let's set up your production deployment process with Netlify.
 6. Copy the domain name of your new site from Netlify. Screen shot is below:
 ![Netlify URL Example](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/netlify_url.png)
 7. Wait for deployment!
-8. When your new site is ready, you will be able to go to: `<your_url>.battlestax.app` to see your game.
+8. When your new site is ready, you will be able to go to: `<your_url>.netlify.app` to see your game.
 
 #### C. Setup for Production CI/CD:
 1. Add your secret variables to your github project.
