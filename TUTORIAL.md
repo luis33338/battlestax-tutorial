@@ -9,6 +9,7 @@ Step 1 of the Battlestax tutorial, we will cover setting up your environment for
 To begin the Battlestax tutorial, you will need the following:
 1. a GitHub account
 2. be a Mac OS user
+3. IDE of your choosing, such as VSCode
 
 ### Step 1: Setup an Astra database
 Setup an Astra account - [Astra](https://astra.datastax.com/)
