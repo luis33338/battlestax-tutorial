@@ -141,3 +141,5 @@ git push origin test_pr
 3. From the Github UI, open a PR for `test_pr` into `master`.
 4. Observe the tests passing.
 5. Merge the PR, observe the site deploying.
+
+Great work! The next steps are on branch step-2: `git checkout step-2`
