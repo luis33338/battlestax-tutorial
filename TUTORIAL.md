@@ -56,17 +56,23 @@ The status will change to `Active` when the database is ready, this will only ta
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
 
-3. Fork the main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
+- **✅ Step 1e. Create a new BattleStax tutorial repo in your own account **
+
+Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
+
+![template](https://github.com/beccam/battlestax-tutorial/tutorial/template.png)
+
+- **✅ Step 1f. Get the Battlestax tutorial on localhost**
 
 4. Clone _your_ `BattleStax Tutorial` repository to your local host
-Use the following command in your terminal to clone repo to your local machine
+Use the following command in your terminal to do so:
 ```
 git clone git@github.com:[your_github_id]/battlestax-tutorial.git
 ```
 
 You have what you need to set up your development environment on localhost.
 
-#### A. Setup for local development:
+#### 2. Setup for local development:
 1. Copy and paste the contents of the `.env.template` file into an `.env` file:
 ```
 cd battlestax-tutorial
