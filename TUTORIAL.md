@@ -61,7 +61,7 @@ The status will change to `Active` when the database is ready, this will only ta
 
 Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
 
-![template](battlestax-tutorial/tutorial/template.png)
+![template](./tutorial/template.png?raw=true))
 
 - **✅ Step 1f. Get the Battlestax tutorial on localhost**
 
