@@ -56,7 +56,7 @@ The status will change to `Active` when the database is ready, this will only ta
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
 
-- **✅ Step 1e. Create a new BattleStax tutorial repo in your own account **
+- **✅ Step 1e. Create a new BattleStax tutorial repo in your own account**
 
 Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
 
