@@ -120,7 +120,7 @@ Next, let's set up your production deployment process with Netlify.
 #### B. Setup for Production Deployment:
 1. Setup Netlify account - [Netlify](https://www.netlify.com)
 2. Follow Netlify's instructions to create a `New Site from Git`. Connect it to your BattleStax fork on the master branch (connection takes a couple of steps)
-3. Use all of the defaults for `Basic Build Settings`
+3. Use all of the defaults for `Basic Build Settings` (ie. the build command and build directory)
 4. Click `Advanced`, and add your environment variables. Screen shot is below.
 ![Netlify Setup Example](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/netlify_setup.png)
 5. Click `Deploy Site`
