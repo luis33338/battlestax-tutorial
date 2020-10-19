@@ -1,10 +1,42 @@
-#### Setup Assumptions for this tutorial:
-1. You have a github account
-2. (for now) You are using Mac OS
+#### Objectives
+Step 1 of the Battlestax tutorial, we will cover setting up your environment for local development, as well as setting up for production development. This includes:
+* Creating an Astra account, as well as a new Astra database
+* Setting up localhost for development
+* Setting up for production development with Netlify
+* Set up your production CI/CD pipeline
 
-### Step One: Setup Stuff!
-1. Setup an Astra account - [Astra](https://astra.datastax.com/)
-2. Create a free tier database on Astra. Write down your credentials: 
+#### Prerequisites:
+To begin the Battlestax tutorial, you will need the following:
+1. a GitHub account
+2. be a Mac OS user
+
+### Step 1: Setup an Astra database
+Setup an Astra account - [Astra](https://astra.datastax.com/)
+
+- **✅ Step 1a. SignIn** :
+
+*expected output*
+![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
+
+- **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
+
+*expected output*
+![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
+
+- **✅ Step 1c. Choose the free plan and select your region**
+
+**Free tier**: 5GB storage, no obligation
+
+**Region**: This is where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1`, idea here is to reduce latency.
+
+*expected output*
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
+
+- **✅ Step 1d. Configure and create your database**
+
+While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
+
+Don't forget to write down your credentials Write down your credentials:
 ```
 ASTRA_DB_USERNAME=
 ASTRA_DB_PASSWORD=
@@ -13,14 +45,26 @@ ASTRA_DB_ID=
 ASTRA_DB_REGION=
 GAMES_COLLECTION=games
 ```
-3. Fork the main `BattleStax Tutorial`: https://github.com/kidrecursive/battlestax-tutorial
+
+You will see your new database `pending` in the Dashboard.
+
+*expected output*
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-pending-1000.png?raw=true)
+
+The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
+
+*expected output*
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
+
+3. Fork the main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
 
 4. Clone _your_ `BattleStax Tutorial` repository to your local host
+Use the following command in your terminal to clone repo to your local machine
 ```
 git clone git@github.com:[your_github_id]/battlestax-tutorial.git
 ```
 
-Sweet! You have what you need to set up your localhost. Let's do that next.
+You have what you need to set up your development environment on localhost.
 
 #### A. Setup for local development:
 1. Copy and paste the contents of the `.env.template` file into an `.env` file:
@@ -28,17 +72,28 @@ Sweet! You have what you need to set up your localhost. Let's do that next.
 cd battlestax-tutorial
 cp .env.template .env
 ```
-2. Fill in the `.env` file variables with the Astra variables you made a copy of earlier
+The `.env` file allows us to customize our own environmental variables. We set our Astra credential to env variable, which are outside of our program.
 
-3. Install NodeJS 12.X LTS - [Download](https://nodejs.org/en/download/) 
+2. Fill in the `.env` file variables with the Astra variables you made a copy of earlier:
+```
+ASTRA_DB_USERNAME=
+ASTRA_DB_PASSWORD=
+ASTRA_DB_KEYSPACE=
+ASTRA_DB_ID=
+ASTRA_DB_REGION=
+GAMES_COLLECTION=games
+```
 
-4. Install Battlestax Dependencies
+
+3. Check your NodeJs version in your terminal `node -v`. Make sure it is up to NodeJS 12.X LTS. If not, install NodeJS 12.X LTS - [Download](https://nodejs.org/en/download/)
+
+4. Install Battlestax Dependencies. These are specified in the package.json file.
 ```
 npm install
 ```
 
-5. Run the provided test on the master branch:
-``` 
+5. Run the provided test on the master branch. The behavior of `npm test` is also specified in the package.json file.
+```
 npm test
 ```
 
@@ -76,6 +131,6 @@ git checkout -b test_pr
 git commit -m --allow_empty "New branch to test ci/cd"
 git push origin test_pr
 ```
-3. From the Github UI, open a PR for `test_pr` into `master`. 
+3. From the Github UI, open a PR for `test_pr` into `master`.
 4. Observe the tests passing.
 5. Merge the PR, observe the site deploying.
