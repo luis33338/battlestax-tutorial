@@ -36,7 +36,7 @@ Each file in our functions folder represents a REST API endpoint
 
 
 package.json gives us a way to run our tests
-
+![tests](./tutorial/tests.png)
 
 
 
