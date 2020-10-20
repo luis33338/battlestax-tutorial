@@ -1,3 +1,5 @@
+## BattleStax Tutorial - Step 1
+
 ### Objectives
 Step 1 of the Battlestax tutorial, we will cover setting up your environment for local development, as well as setting up for production development. This includes:
 * Creating an Astra account, as well as a new Astra database
@@ -5,7 +7,7 @@ Step 1 of the Battlestax tutorial, we will cover setting up your environment for
 * Setting up for production development with Netlify
 * Set up your production CI/CD pipeline
 
-#### Prerequisites:
+### Prerequisites:
 To begin the Battlestax tutorial, you will need the following:
 1. a GitHub account
 2. be a Mac OS user
