@@ -29,14 +29,44 @@ To begin the Battlestax tutorial, you will need the following:
 * Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice. We are using VSCode in this example, another recommandation would be Ryder.
 ![VSCode](./tutorial/vscode.png)
 
+### Making an endpoint using Netlify functions
+
 4. Check out the new `functions` folder
 pic
 Each file in our functions folder represents a REST API endpoint
+Take a look at the `insertGame.js` file inside the `functions` folder. For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back "Hello, World"
+
+* Be sure that the app you had running in the previous step has been shutdown. To try the REST API along with the front end, in the terminal use the command:
+`npm run dev`
+* This will give you the UI plus run the `insertGame` function in the background.
+
+* See the UI running at: `localhost:8888`
+* See the end point at: `localhost:8888/.netlify/functions/insertGame`
+
+* You should see this output at the endpoint
+`{"hello":"world"}`
+This is our serverless function giving us back the "Hello World" example.
 
 
-
-package.json gives us a way to run our tests
+package.json gives us a way to run our tests. We are use different tests for testing our functions than our UI tests.
 ![tests](./tutorial/tests.png)
+
+
+### Starting the Test Cycle
+
+Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
+
+```javascript
+const insertGame = require("./insertGame");
+
+it("should return a JSON response", async () => {
+  const response = await insertGame.handler();
+  const responseJson = JSON.parse(response.body);
+  expect(responseJson.hello).toBe("world");
+});
+```
+
+The way we are going to approach writing our tests is by asking the question "What does our endpoint need to do?"
 
 
 
