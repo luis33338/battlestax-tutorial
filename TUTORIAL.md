@@ -18,11 +18,11 @@ To begin the Battlestax tutorial, you will need the following:
 ### Steps
 
 1. Switch to branch `step-2`
-For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal"
+* For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal"
 `git checkout step-2`
 
 2. Open your IDE
-Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice.
+* Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice.
 ![VSCode](./tutorial/vscode.png)
 
 
