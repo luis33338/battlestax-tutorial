@@ -21,9 +21,22 @@ To begin the Battlestax tutorial, you will need the following:
 * For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal"
 `git checkout step-2`
 
-2. Open your IDE
-* Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice.
+2. Get the new dependencies
+* `step-2` has some new dependencies that the previous step did not have, so we will need to install those via `npm install`. 
+* This will grab the list of dependencies needed from `package.json` and install them on your machine
+
+3. Open your IDE
+* Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice. We are using VSCode in this example, another recommandation would be Ryder.
 ![VSCode](./tutorial/vscode.png)
+
+4. Check out the new `functions` folder
+pic
+Each file in our functions folder represents a REST API endpoint
+
+
+
+package.json gives us a way to run our tests
+
 
 
 
