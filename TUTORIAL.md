@@ -1,4 +1,4 @@
-#### Objectives
+### Objectives
 Step 1 of the Battlestax tutorial, we will cover setting up your environment for local development, as well as setting up for production development. This includes:
 * Creating an Astra account, as well as a new Astra database
 * Setting up localhost for development
