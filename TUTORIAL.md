@@ -59,7 +59,7 @@ exports.handler = async (event, context) => {
 This is our serverless function giving us back the "Hello World" example.
 
 
-### Section C) Starting the test Cycle
+### Section C) Starting the test cycle
 
 Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame` function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
 
