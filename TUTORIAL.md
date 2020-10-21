@@ -48,7 +48,7 @@ exports.handler = async (event, context) => {
 
 ```
 
-* Be sure that the app you had running in the previous step has been shutdown. To try the REST API along with the front end, in the terminal use the command:
+* Be sure that the app you had running in the previous step has been shutdown (`Ctrl-C`). To try the REST API along with the front end, in the terminal use the command:
 `npm run dev`
 * This will give you the UI plus run the `insertGame` function in the background.
 
@@ -66,7 +66,7 @@ package.json gives us a way to run our tests. We are use different tests for tes
 
 ### Starting the Test Cycle
 
-Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
+Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame` function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
 
 ```javascript
 const insertGame = require("./insertGame");
@@ -78,7 +78,16 @@ it("should return a JSON response", async () => {
 });
 ```
 
-The way we are going to approach writing our tests is by asking the question "What does our endpoint need to do?"
+The way we are going to approach writing our tests is by asking the question "What does our endpoint need to do?". We want our function to 
+create a new game on Astra (provision a new game) --  and we provide the API with a random game code so this can work. Our endpoint needs to:
+** Our API should make the game document
+** It should not beable to make a game document if we don't give it a valid game id
+** If we get a 500 on error (something goes wrong), we should be informed
+
+We need to write the test cases that will check for these actions in `insertGame`
+
+Run the functions test that you have written:
+`npm run tests: functions`
 
 
 
