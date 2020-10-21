@@ -1,8 +1,9 @@
 ## BattleStax Tutorial - Step 2
 
 ### Objectives
-The REST API is stateless, and therefore helps functions scale horizontally. In step 2 of the Battlestax tutorial, we will create and test an API call to Astra:
-* 
+The REST API is stateless, and therefore helps functions scale horizontally. In step 2 of the Battlestax tutorial, we will:
+* We create test cases to check that our API call is working correctly
+* Build the API call to Astra to create a game document, based on the requirements from our test
 
 ### Prerequisites:
 To begin the Battlestax tutorial, you will need the following:
