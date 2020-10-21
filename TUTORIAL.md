@@ -107,7 +107,7 @@ it("shouldn't create a game document without a game id", async () => {
 });
 ```
 
-4. If something goew wrong, we want to be notified (500 on error)
+4. If something goes wrong, we want to be notified (500 on error)
 ```javascript
 it("should return a 500 on error", async () => {
   process.env.GAMES_COLLECTION = undefined;
@@ -123,7 +123,7 @@ This basically causes an error scenario as it changes the `GAMES_COLLECTION` env
 
 5. The `package.json` file gives us a way to run our tests. We are use different tests for testing our functions than our UI tests.
 
-![tests](./tutorial/tests.png)
+![testing](./tutorial/testing.png)
 
 Run the functions test that you have written:
 `npm run tests: functions`
