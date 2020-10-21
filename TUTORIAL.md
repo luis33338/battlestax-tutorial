@@ -15,7 +15,7 @@ To begin the Battlestax tutorial, you will need the following:
 4. environmental variables from the step 1 (?)
 
 
-### Steps
+### Section A) Setup your environment
 
 1. Switch to branch `step-2`
 * For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal"
@@ -29,13 +29,15 @@ To begin the Battlestax tutorial, you will need the following:
 * Open branch `step-2` of the  `battlestax-tutorial` repo in your IDE of choice. We are using VSCode in this example, another recommandation would be Ryder.
 ![VSCode](./tutorial/vscode.png)
 
-### Making an endpoint using Netlify functions
+### Section B) Making an endpoint using Netlify functions
 
-4. Check out the new `functions` folder
+1. Check out the new `functions` folder.
 
-Each file in our functions folder represents a REST API endpoint
+Each file in our functions folder represents a REST API endpoint.
 Take a look at the `insertGame.js` file inside the `functions` folder.
+
 ![insert](./tutorial/insert.png)
+
 For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back `{"hello":"world"}`
 
 ```javascript
@@ -48,7 +50,7 @@ exports.handler = async (event, context) => {
 
 ```
 
-* Be sure that the app you had running in the previous step has been shutdown (`Ctrl-C`). To try the REST API along with the front end, in the terminal use the command:
+2. Be sure that the app you had running in the previous step has been shutdown (`Ctrl-C`). To try the REST API along with the front end, in the terminal use the command:
 `npm run dev`
 * This will give you the UI plus run the `insertGame` function in the background.
 
@@ -60,11 +62,7 @@ exports.handler = async (event, context) => {
 This is our serverless function giving us back the "Hello World" example.
 
 
-package.json gives us a way to run our tests. We are use different tests for testing our functions than our UI tests.
-![tests](./tutorial/tests.png)
-
-
-### Starting the Test Cycle
+### Section C) Starting the Test Cycle
 
 Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame` function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
 
@@ -80,11 +78,52 @@ it("should return a JSON response", async () => {
 
 The way we are going to approach writing our tests is by asking the question "What does our endpoint need to do?". We want our function to 
 create a new game on Astra (provision a new game) --  and we provide the API with a random game code so this can work. Our endpoint needs to:
-** Our API should make the game document
-** It should not beable to make a game document if we don't give it a valid game id
-** If we get a 500 on error (something goes wrong), we should be informed
+* Our API should make the game document
+* It should not beable to make a game document if we don't give it a valid game id
+* If we get a 500 on error (something goes wrong), we should be informed
 
-We need to write the test cases that will check for these actions in `insertGame`
+1. We need to write the test cases that will check for these actions in `insertGame`. We are going to use `faker.js`, a JavaScript library for generating sample data. This fake data is useful when building and testing our application. Hence, we should `require` the faker library.
+
+`const faker = require("faker");`
+
+2. Our API should make the game document. We need to test to see if the function actually does that:
+```javascript
+it("should create a game document", async () => {
+  const response = await insertGame.handler({
+    path: "/functions/insertGame/" + faker.helpers.replaceSymbols("????"),
+    body: '{"user":"me"}',
+  });
+  expect(response.statusCode).toBe(200);
+});
+```
+
+`faker.helpers.replaceSymbols("????")` will create a sample game id
+
+3. Our function must not beable to create a game document with a valid game id
+```javascript
+it("shouldn't create a game document without a game id", async () => {
+  const response = await insertGame.handler({ path: "insertGame" });
+  expect(response.statusCode).toBe(400);
+});
+```
+
+4. If something goew wrong, we want to be notified (500 on error)
+```javascript
+it("should return a 500 on error", async () => {
+  process.env.GAMES_COLLECTION = undefined;
+  const response = await insertGame.handler({
+    path: "/functions/insertGame/" + faker.helpers.replaceSymbols("????"),
+    body: '{"user":"me"}',
+  });
+  expect(response.statusCode).toBe(500);
+});
+```
+
+This basically causes an error scenario as it changes the `GAMES_COLLECTION` environmental variable to undefined.
+
+5. The `package.json` file gives us a way to run our tests. We are use different tests for testing our functions than our UI tests.
+
+![tests](./tutorial/tests.png)
 
 Run the functions test that you have written:
 `npm run tests: functions`
@@ -98,136 +137,11 @@ Run the functions test that you have written:
 
 
 
------
-### Step 1: Setup in IDE
-Setup an Astra account - [Astra](https://astra.datastax.com/)
-
-- **✅ Step 1a. SignIn** :
-
-*expected output*
-![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
-
-- **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
-
-*expected output*
-![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
-
-- **✅ Step 1c. Choose the free plan and select your region**
-
-**Free tier**: 5GB storage, no obligation
-
-**Region**: This is where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1`, idea here is to reduce latency.
-
-*expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
-
-- **✅ Step 1d. Configure and create your database**
-
-While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
-
-Don't forget to write down your credentials Write down your credentials:
-```
-ASTRA_DB_USERNAME=
-ASTRA_DB_PASSWORD=
-ASTRA_DB_KEYSPACE=
-ASTRA_DB_ID=
-ASTRA_DB_REGION=
-GAMES_COLLECTION=games
-```
-
-You will see your new database `pending` in the Dashboard.
-
-*expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-pending-1000.png?raw=true)
-
-The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
-
-*expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
-
-- **✅ Step 1e. Create a new BattleStax tutorial repo in your own account**
-
-Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
-
-![template](./tutorial/template.png?raw=true))
-
-- **✅ Step 1f. Get the Battlestax tutorial on localhost**
-
-4. Clone _your_ `BattleStax Tutorial` repository to your local host
-Use the following command in your terminal to do so:
-```
-git clone git@github.com:[your_github_id]/battlestax-tutorial.git
-```
-
-You have what you need to set up your development environment on localhost.
-
-#### 2. Setup for local development:
-1. Copy and paste the contents of the `.env.template` file into an `.env` file:
-```
-cd battlestax-tutorial
-cp .env.template .env
-```
-The `.env` file allows us to customize our own environmental variables. We set our Astra credential to env variable, which are outside of our program.
-
-2. Fill in the `.env` file variables with the Astra variables you made a copy of earlier:
-```
-ASTRA_DB_USERNAME=
-ASTRA_DB_PASSWORD=
-ASTRA_DB_KEYSPACE=
-ASTRA_DB_ID=
-ASTRA_DB_REGION=
-GAMES_COLLECTION=games
-```
 
 
-3. Check your NodeJs version in your terminal `node -v`. Make sure it is up to NodeJS 12.X LTS. If not, install NodeJS 12.X LTS - [Download](https://nodejs.org/en/download/)
 
-4. Install Battlestax Dependencies. These are specified in the package.json file.
-```
-npm install
-```
 
-5. Run the provided test on the master branch. The behavior of `npm test` is also specified in the package.json file.
-```
-npm test
-```
 
-6. Start your app
-```
-npm start
-```
 
-7. Hit the loading screen
-```
-http://localhost:3000/
-```
 
-Done! You have successfully set up your app, run your tests locally, and started BattleStax.
-Next, let's set up your production deployment process with Netlify.
 
-#### B. Setup for Production Deployment:
-1. Setup Netlify account - [Netlify](https://www.netlify.com)
-2. Follow Netlify's instructions to create a `New Site from Git`. Connect it to your BattleStax fork on the master branch (connection takes a couple of steps)
-3. Use all of the defaults for `Basic Build Settings` (ie. the build command and build directory)
-4. Click `Advanced`, and add your environment variables. Screen shot is below.
-![Netlify Setup Example](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/netlify_setup.png)
-5. Click `Deploy Site`
-6. Copy the domain name of your new site from Netlify. Screen shot is below:
-![Netlify URL Example](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/netlify_url.png)
-7. Wait for deployment!
-8. When your new site is ready, you will be able to go to: `<your_url>.netlify.app` to see your game.
-
-#### C. Setup for Production CI/CD:
-1. Add your secret variables to your github project.
-![secret keys in github](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/github_secrets.png)
-2. On your local machine, create a new branch and issue an empty commit, then push it to your fork.
-```
-git checkout -b test_pr
-git commit --allow-empty -m "New branch to test ci/cd"
-git push origin test_pr
-```
-3. From the Github UI, open a PR for `test_pr` into `master`.
-4. Observe the tests passing.
-5. Merge the PR, observe the site deploying.
-
-Great work! The next steps are on branch step-2: `git checkout step-2`
