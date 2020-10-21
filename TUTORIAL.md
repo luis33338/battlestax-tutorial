@@ -2,10 +2,7 @@
 
 ### Objectives
 The REST API is stateless, and therefore helps functions scale horizontally. In step 2 of the Battlestax tutorial, we will create and test an API call to Astra:
-* Creating an Astra account, as well as a new Astra database
-* Setting up localhost for development
-* Setting up for production development with Netlify
-* Set up your production CI/CD pipeline
+* 
 
 ### Prerequisites:
 To begin the Battlestax tutorial, you will need the following:
