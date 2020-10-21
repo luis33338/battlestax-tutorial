@@ -36,7 +36,7 @@ To begin the Battlestax tutorial, you will need the following:
 Each file in our functions folder represents a REST API endpoint
 Take a look at the `insertGame.js` file inside the `functions` folder.
 ![insert](./tutorial/insert.png)
-For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back "Hello, World"
+For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back `{"hello":"world"}`
 
 ```javascript
 exports.handler = async (event, context) => {
