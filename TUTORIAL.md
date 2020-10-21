@@ -32,9 +32,21 @@ To begin the Battlestax tutorial, you will need the following:
 ### Making an endpoint using Netlify functions
 
 4. Check out the new `functions` folder
-pic
+
 Each file in our functions folder represents a REST API endpoint
-Take a look at the `insertGame.js` file inside the `functions` folder. For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back "Hello, World"
+Take a look at the `insertGame.js` file inside the `functions` folder.
+![insertgame](./tutorial/insertgame.png)
+For the moment, this REST API endpoint is stubbed out. If we use this as it, it will simple give us back "Hello, World"
+
+```javascript
+exports.handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ hello: "world" }),
+  };
+};
+
+```
 
 * Be sure that the app you had running in the previous step has been shutdown. To try the REST API along with the front end, in the terminal use the command:
 `npm run dev`
