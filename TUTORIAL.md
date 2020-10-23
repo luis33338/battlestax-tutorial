@@ -1,5 +1,13 @@
 ## BattleStax Tutorial - Step 1
 
+## Table of Contents
+| Title  | Description
+|---|---|
+| **Objectives** | [Slide deck for the workshop](slides/Presentation.pdf) |
+| **Prerequisites** | [Create your Astra instance](#1-create-your-astra-instance) |
+| **Section A) Setup an Astra database** | [Create a table](#2-create-a-table) |
+| **3. Execute CRUD (Create, Read, Update, Delete) operations** | [Execute CRUD operations](#3-execute-crud-operations) |
+
 ### Objectives
 Step 1 of the Battlestax tutorial, we will cover setting up your environment for local development, as well as setting up for production development. This includes:
 * Creating an Astra account, as well as a new Astra database
@@ -13,20 +21,21 @@ To begin the Battlestax tutorial, you will need the following:
 2. be a Mac OS user
 3. IDE of your choosing, such as VSCode
 
-### Step 1: Setup an Astra database
-Setup an Astra account - [Astra](https://astra.datastax.com/)
+### Section A) Setup an Astra database
 
-- **✅ Step 1a. SignIn** :
+- **✅ Step 1. SignIn** :
+
+To get started with a free-forever, zero-install Cassandra database **[click here](https://dtsx.io/workshop)** 🚀. 
 
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
 
-- **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
+- **✅ Step 2. You'll then be directed to the summary page. Locate the button `Add Database`**
 
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
 
-- **✅ Step 1c. Choose the free plan and select your region**
+- **✅ Step 3. Choose the free plan and select your region**
 
 **Free tier**: 5GB storage, no obligation
 
@@ -35,11 +44,14 @@ Setup an Astra account - [Astra](https://astra.datastax.com/)
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
 
-- **✅ Step 1d. Configure and create your database**
+- **✅ Step 4. Configure and create your database**
 
-While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
+Astra allows you to fill in these fields with values of your own choosing, we do recommend naming your keyspace `battlestax`
 
-Don't forget to write down your credentials Write down your credentials:
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/create-and-configure-annotated-1000.png?raw=true)
+
+Don't forget to write down your credentials. We will turn these into environemental variables in a later step. Take note of the additional credential here that wasn't a part of our database configuration, `GAMES_COLLECTION`. We will be needing it later.
+
 ```
 ASTRA_DB_USERNAME=
 ASTRA_DB_PASSWORD=
@@ -59,16 +71,15 @@ The status will change to `Active` when the database is ready, this will only ta
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
 
-- **✅ Step 1e. Create a new BattleStax tutorial repo in your own account**
+- **✅ Step 5. Create a new BattleStax tutorial repo in your own account**
 
 Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
 
 ![template](./tutorial/template.png?raw=true))
 
-- **✅ Step 1f. Get the Battlestax tutorial on localhost**
+- **✅ Step 5. Get the Battlestax tutorial on localhost**
 
-4. Clone _your_ `BattleStax Tutorial` repository to your local host
-Use the following command in your terminal to do so:
+4. Clone _your_ `BattleStax Tutorial` repository to localhost, use the following command in your terminal to do so:
 ```
 git clone git@github.com:[your_github_id]/battlestax-tutorial.git
 ```
