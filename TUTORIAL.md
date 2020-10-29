@@ -1,13 +1,5 @@
 ## BattleStax Tutorial - Step 1
 
-## Table of Contents
-| Title  | Description
-|---|---|
-| **Objectives** | [Slide deck for the workshop](slides/Presentation.pdf) |
-| **Prerequisites** | [Create your Astra instance](#1-create-your-astra-instance) |
-| **Section A) Setup an Astra database** | [Create a database](#A)-setup-an-astra-database) |
-| **3. Execute CRUD (Create, Read, Update, Delete) operations** | [Execute CRUD operations](#3-execute-crud-operations) |
-
 ### Objectives
 Step 1 of the Battlestax tutorial, we will cover setting up your environment for local development, as well as setting up for production development. This includes:
 * Creating an Astra account, as well as a new Astra database
