@@ -5,7 +5,7 @@
 |---|---|
 | **Objectives** | [Slide deck for the workshop](slides/Presentation.pdf) |
 | **Prerequisites** | [Create your Astra instance](#1-create-your-astra-instance) |
-| **Section A) Setup an Astra database** | [Create a table](#2-create-a-table) |
+| **Section A) Setup an Astra database** | [Create a database](#A)-setup-an-astra-database) |
 | **3. Execute CRUD (Create, Read, Update, Delete) operations** | [Execute CRUD operations](#3-execute-crud-operations) |
 
 ### Objectives
