@@ -22,12 +22,12 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
 
-2. You'll then be directed to the summary page. Locate the button `Add Database`**
+2. You'll then be directed to the summary page. Locate the button `Add Database`
 
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
 
-3. Choose the free plan and select your region**
+3. Choose the free plan and select your region
 
 **Free tier**: 5GB storage, no obligation
 
@@ -36,7 +36,7 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
 
-4. Configure and create your database**
+4. Configure and create your database
 
 Astra allows you to fill in these fields with values of your own choosing, we do recommend naming your keyspace `battlestax`
 
