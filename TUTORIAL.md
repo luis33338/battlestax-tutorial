@@ -15,19 +15,19 @@ To begin the Battlestax tutorial, you will need the following:
 
 ### Section A) Setup an Astra database
 
-- **✅ Step 1. SignIn** :
+1. SignIn :
 
 To get started with a free-forever, zero-install Cassandra database **[click here](https://dtsx.io/workshop)** 🚀. 
 
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
 
-- **✅ Step 2. You'll then be directed to the summary page. Locate the button `Add Database`**
+2. You'll then be directed to the summary page. Locate the button `Add Database`**
 
 *expected output*
 ![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
 
-- **✅ Step 3. Choose the free plan and select your region**
+3. Choose the free plan and select your region**
 
 **Free tier**: 5GB storage, no obligation
 
@@ -36,7 +36,7 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
 
-- **✅ Step 4. Configure and create your database**
+4. Configure and create your database**
 
 Astra allows you to fill in these fields with values of your own choosing, we do recommend naming your keyspace `battlestax`
 
@@ -63,15 +63,15 @@ The status will change to `Active` when the database is ready, this will only ta
 *expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
 
-- **✅ Step 5. Create a new BattleStax tutorial repo in your own account**
+5. Create a new BattleStax tutorial repo in your own account**
 
 Click on the  main `BattleStax Tutorial` into your own GitHub account: https://github.com/kidrecursive/battlestax-tutorial
 
 ![template](./tutorial/template.png?raw=true))
 
-- **✅ Step 5. Get the Battlestax tutorial on localhost**
+6 Get the Battlestax tutorial on localhost**
 
-4. Clone _your_ `BattleStax Tutorial` repository to localhost, use the following command in your terminal to do so:
+7. Clone _your_ `BattleStax Tutorial` repository to localhost, use the following command in your terminal to do so:
 ```
 git clone git@github.com:[your_github_id]/battlestax-tutorial.git
 ```
