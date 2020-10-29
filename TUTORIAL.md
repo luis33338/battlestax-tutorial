@@ -16,7 +16,7 @@ To continue the Battlestax tutorial, you will need the following:
 ### Section A) Setup your environment
 
 1. Switch to branch `step-2`
-* For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal"
+* For this part of the tutorial, we will be working in step-2 branch. Switch branches by using the following command in the terminal
 `git checkout step-2`
 
 2. Get the new dependencies
@@ -62,7 +62,7 @@ This is our serverless function giving us back the "Hello World" example.
 
 ### Section C) Starting the test cycle
 
-Have a look at the `/functions/insertGame.test.js` file, this does do much at this point. This basically tests the `insertGame` function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
+Have a look at the `/functions/insertGame.test.js` file, this does not do much at this point. This basically tests the `insertGame` function to ensure that we get "world" in our reponse, and hence we would know that the function is working correctly.
 
 ```javascript
 const insertGame = require("./insertGame");
