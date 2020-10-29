@@ -122,7 +122,7 @@ http://localhost:3000/
 Done! You have successfully set up your app, run your tests locally, and started BattleStax.
 Next, let's set up your production deployment process with Netlify.
 
-#### B. Setup for Production Deployment:
+### Section B) Setup for Production Deployment:
 1. Setup Netlify account - [Netlify](https://www.netlify.com)
 2. Follow Netlify's instructions to create a `New Site from Git`. Connect it to your BattleStax fork on the master branch (connection takes a couple of steps)
 3. Use all of the defaults for `Basic Build Settings` (ie. the build command and build directory)
@@ -134,7 +134,7 @@ Next, let's set up your production deployment process with Netlify.
 7. Wait for deployment!
 8. When your new site is ready, you will be able to go to: `<your_url>.netlify.app` to see your game.
 
-#### C. Setup for Production CI/CD:
+### Section C) Setup for Production CI/CD:
 1. Add your secret variables to your github project.
 ![secret keys in github](https://raw.githubusercontent.com/kidrecursive/battlestax-tutorial/step-1/tutorial/github_secrets.png)
 2. On your local machine, create a new branch and issue an empty commit, then push it to your fork.
