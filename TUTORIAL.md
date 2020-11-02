@@ -5,14 +5,6 @@ The REST API is stateless, and therefore helps functions scale horizontally. In 
 * Create test cases to check that our API call is working correctly
 * Build the API call to Astra to create a game document, based on the requirements from our test
 
-### Prerequisites:
-To continue the Battlestax tutorial, you will need the following:
-1. a GitHub account
-2. be a Mac OS user
-3. IDE of your choosing, such as VSCode
-4. Completion of step 1 (with an operational Astra database)
-
-
 ### Section A) Setup your environment
 
 1. Switch to branch `step-2`
