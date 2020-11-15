@@ -54,14 +54,15 @@ The _.sampleSize() method is used to give an array of n random elements from the
 The join() method creates and returns a new string by concatenating all of the elements in an array 
 A string of 4 random letters is returned
 
-Once the `createAndInitGame` function is called, a new game id is created, which is dispatched to the store to be used `setId` reducer. 
+Once the `createAndInitGame` function is called, a new game id is created, which is dispatched to the store to be used `setId` reducer in our gameSlice.js. Note the import of `setId` from `/store/gameSlice` at the top of the NewGame.js code,
 
+![createAndInitGame](./tutorial/createAndInitGame.png)
+
+The only is we have yet to add a reducer to `gameSlice`
 
 Now that we have function that can generate a game code for use. Let's use the RTK to build out the game slice that will set the game code as part of the state. Open the `src/store/gameSlice.js` file to see skeletal code we have provided to get you started.
 
-
-
-
+![gameSlice](./tutorial/gameSlice.png)
 
 
 
