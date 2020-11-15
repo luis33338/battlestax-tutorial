@@ -56,7 +56,7 @@ A string of 4 random letters is returned
 
 Once the `createAndInitGame` function is called, a new game id is created, which is dispatched to the store to be used `setId` reducer in our gameSlice.js. Note the import of `setId` from `/store/gameSlice` at the top of the NewGame.js code,
 
-![createAndInitGame](./tutorial/createAndInitGame.png)
+![InitGame](./tutorial/InitGame.png)
 
 The only is we have yet to add a reducer to `gameSlice`
 
