@@ -64,6 +64,9 @@ Now that we have function that can generate a game code for use. Let's use the R
 
 ![gameSlice](./tutorial/gameSlice.png)
 
+Lets discuss some of the parameters in `createSlice`.
+The initial state value for this slice of state.
+
 
 
 
