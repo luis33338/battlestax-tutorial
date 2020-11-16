@@ -1,7 +1,7 @@
 ## BattleStax Tutorial - Step 3: Client state
 
 ### Objectives
-Redux Tool Kit (RTK) tremendously simplifies using Redux, elminating most of the issues most people have when using it (boilerplate code, etc). We will use RTK for state management on the Client and see how it is working with Astra. We will: 
+Redux Tool Kit (RTK) tremendously simplifies using Redux, eliminating most of the issues most people have when using it (boilerplate code, etc). We will use RTK for state management on the Client and see how it is working with Astra. We will: 
 * Build out the `gameSlice.js` boilerplate code by implementing one reducer, exporting an action, and creating a selector
 * Build a test to try out the functionality of `gameSlice.js`
 
