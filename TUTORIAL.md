@@ -1,4 +1,4 @@
-## BattleStax Tutorial - Step 3 - Client state
+## BattleStax Tutorial - Step 3: Client state
 
 ### Objectives
 Redux Tool Kit (RTK) tremendously simplifies using Redux, elminating most of the issues most people have when using it (boilerplate code, etc). We will use RTK for state management on the Client and see how it is working with Astra. We will: 
@@ -20,7 +20,7 @@ The Lobby and Player clients stay connected, as once the state is updated, it wi
 
 ### Section B) Build a slice
 
-In order to change the game state, there needs to be an initial event that triggers an _action_. In our case, this comes from the initiation of a new game, via the NewGame.js component.
+A store is an object that holds the complete state of your app. The only way to change its state is by dispatching actions. Therefore, order to change the game state, there needs to be an initial event that triggers an _action_. In our case, this comes from the initiation of a new game, via the NewGame.js component.
 
 Now to be able to set a game id as part of state, we will have to have a way to generate game id first. Lets first create a file called `src/constants.js`, that will provide some guideline to help our `generateGameId` to create random game ids. We wants our game codes to be 
 * derived from the full Roman alphabet (ABCDE..)
@@ -64,11 +64,13 @@ Now that we have function that can generate a game code for use. Let's use the R
 
 ![gameSlice](./tutorial/gameSlice.png)
 
-Lets discuss some of the parameters in `createSlice`.
+Lets discuss some of the parameters in `createSlice`:
 
-`initialState` - The initial state value for this slice of state.
-`name` - A string name for this slice of state. Generated action type constants will use this as a prefix.
-`reducers` - An object containing Redux "case reducer" functions (functions intended to handle a specific action type.)
+* `createSlice` - Takes an options object as its argument, with these options:
+* `initialState` - The initial state value for this slice of state.
+* `name` - A string name for this slice of state. Generated action type constants will use this as a prefix.
+* `reducers` - An object containing Redux "case reducer" functions (functions intended to handle a specific action type.)
 
+We will set our initialState to `id:""`, so `id` is an empty string until a game is initialized and a game `id` is set as part of the state.
 
 
