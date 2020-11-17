@@ -71,6 +71,29 @@ Lets discuss some of the parameters in `createSlice`:
 * `name` - A string name for this slice of state. Generated action type constants will use this as a prefix.
 * `reducers` - An object containing Redux "case reducer" functions (functions intended to handle a specific action type.)
 
-We will set our initialState to `id:""`, so `id` is an empty string until a game is initialized and a game `id` is set as part of the state.
+We will set our initialState to `id:""`, so `id` is an empty string until a game is initialized and a game `id` is set as part of the state:
+
+```
+export const initialState = {
+  id: "",
+};
+```
+
+Give your slice a name:
+```
+name: "game"
+```
+
+Next we will create a reducer. Reducers have the power to change the state of the application.
+
+```
+reducers: {
+    setId: (state, action) => {
+      state.id = action.payload;
+    },
+```
+
+
+
 
 
